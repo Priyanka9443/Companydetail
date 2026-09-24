@@ -1,0 +1,83 @@
+﻿@model dataAccess.Models.Employee
+
+@{
+    ViewData["Title"] = "Add Employee";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+
+        <div class="col-md-6">
+
+            <div class="card shadow-lg border-0 rounded-4">
+
+                <div class="card-header bg-primary text-white text-center rounded-top-4">
+                    <h3>Employee Registration</h3>
+                </div>
+
+                <div class="card-body p-4">
+
+                    <form asp-action="AddEmployee" method="post">
+
+                        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                        <div class="mb-3">
+                            <label asp-for="name" class="form-label fw-bold">
+                                Full Name
+                            </label>
+                            <input asp-for="name"
+                                   class="form-control"
+                                   placeholder="Enter your name" />
+                            <span asp-validation-for="name" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="email" class="form-label fw-bold">
+                                Email Address
+                            </label>
+                            <input asp-for="email"
+                                   class="form-control"
+                                   placeholder="Enter your email" />
+                            <span asp-validation-for="email" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="password" class="form-label fw-bold">
+                                Password
+                            </label>
+                            <input asp-for="password"
+                                   type="password"
+                                   class="form-control"
+                                   placeholder="Enter your password" />
+                            <span asp-validation-for="password" class="text-danger"></span>
+                        </div>
+
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary btn-lg">
+                                Register
+                            </button>
+                        </div>
+
+                    </form>
+
+                </div>
+
+                <div class="card-footer text-center bg-light">
+                    Already have an account?
+                    <a asp-action="EmployeeLogin" class="text-decoration-none">
+                        Login
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

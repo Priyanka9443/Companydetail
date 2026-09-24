@@ -1,0 +1,64 @@
+﻿@{
+    ViewData["Title"] = "Homepage";
+}
+
+<div class="container mt-5">
+
+    <div class="text-center mb-5">
+        <h1 class="display-4 text-primary fw-bold">
+            Employee Management System
+        </h1>
+
+        <p class="lead text-muted">
+            Manage Employee Registration, Login and Details
+        </p>
+    </div>
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-8">
+
+            <div class="card shadow-lg border-0 rounded-4">
+
+                <div class="card-body text-center p-5">
+
+                    <h3 class="mb-3">
+                        Welcome to Employee Portal
+                    </h3>
+
+                    <p class="text-muted mb-4">
+                        Register new employees, login securely,
+                        and manage employee information.
+                    </p>
+
+                    <div class="d-grid gap-3">
+
+                        <a asp-action="AddEmployee"
+                           asp-controller="Employee"
+                           class="btn btn-success btn-lg">
+                            Employee Registration
+                        </a>
+
+                        <a asp-action="EmployeeLogin"
+                           asp-controller="Employee"
+                           class="btn btn-primary btn-lg">
+                            Employee Login
+                        </a>
+
+                        <a asp-action="GetEmployee"
+                           asp-controller="Employee"
+                           class="btn btn-warning btn-lg">
+                            View Employee List
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
